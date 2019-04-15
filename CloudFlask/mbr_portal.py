@@ -32,10 +32,10 @@ class Mortgage_details(db.Model):
 with app.app_context():
     db.create_all()
 
-# class re_Details(db.Model):
-# 	__tablename__ = 'realestate2'
-# 	M1sID = db.Column('m1sid', db.Unicode, primary_key=True)
-# 	Value = db.Column('value', db.Unicode)
+class re_Details(db.Model):
+	__tablename__ = 'realestate2'
+	M1sID = db.Column('m1sid', db.Unicode, primary_key=True)
+	Value = db.Column('value', db.Unicode)
 
 @app.route('/')
 def home():
@@ -63,8 +63,10 @@ def login():
             else:
                 get_user.application_status='Incomplete'
                 print(get_user.application_status)
+                print("success")
             return render_template('updatemessage2.html',mo=get_user)
         else:
+        	print("error")
             error = 'Employee ID and password do not match! Try again.'
             return render_template('login.html', error = error)
     return render_template('login.html')
