@@ -29,8 +29,8 @@ class Mortgage_details(db.Model):
 	application_status = db.Column('application_status', db.Unicode)
 
 
-with app.app_context():
-    db.create_all()
+# with app.app_context():
+#     db.create_all()
 
 class re_Details(db.Model):
 	__tablename__ = 'realestate2'
