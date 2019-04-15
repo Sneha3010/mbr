@@ -48,8 +48,8 @@ def login():
         _id= random.randint(1,100)
         user.id = str(_id)
     # user.id = 1
-    user.name = "test1"
-    user.password = "test1"
+    user.name = "test"
+    user.password = "test"
     db.session.add(user)
     db.session.commit()
     if request.method == 'POST':
