@@ -43,15 +43,15 @@ def home():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    user = Mortgage_details()
-    for x in range(1):
-        _id= random.randint(1,100)
-        user.id = str(_id)
+    # user = Mortgage_details()
+    # for x in range(1):
+    #     _id= random.randint(1,100)
+    #     user.id = str(_id)
     # user.id = 1
-    user.name = "test"
-    user.password = "test"
-    db.session.add(user)
-    db.session.commit()
+    # user.name = "test"
+    # user.password = "test"
+    # db.session.add(user)
+    # db.session.commit()
     if request.method == 'POST':
         userid = request.form['name']
         get_user = Mortgage_details.query.filter_by(name=userid).first()
